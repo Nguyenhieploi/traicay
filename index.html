@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="./index.css">
+<title>Title</title>
+</head>
+<body>
+    <section>
+        <div class="bg"></div>
+        <header>
+        <a href="#" class="logo">Fruits</a>
+        <ul class="navigation">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">What's new</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        </header>
+        <div class="content">
+            <div class="textbox">
+                <h2>Eat Fresh Everyday</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt eum fuga nostrum nemo doloremque optio obcaecati dicta, labore perspiciatis enim tempore minus veritatis voluptatum blanditiis, ab excepturi! Sapiente, voluptas quae?</p>
+            <a href="">Learn More</a>
+            
+            </div>
+            <div class="imgbox">
+                <img src="./apple.png" class="fruits">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li data-text="apple" class="active"><img src="./apple.png" onclick="imgSlider('./apple.png');changeBgColor('#fc4a55')"></li>
+            <li data-text="mango"><img src="./mango.png" onclick="imgSlider('./mango.png');changeBgColor('#ffcc02')"></li>
+            <li data-text="watermelon"><img src="./watermelon.png" onclick="imgSlider('./watermelon.png');changeBgColor('#92ba3c')"></li>
+            <li data-text="dragon Fruits"><img src="./dragonFruits.png" onclick="imgSlider('./dragonFruits.png');changeBgColor('#fb6cb2')"></li>
+            <li data-text="pineapple"><img src="./pineapple.png" onclick="imgSlider('./pineapple.png');changeBgColor('#ffb42b' )"></li>
+        </ul>
+        <ul class="sci">
+            <li><a href="https://www.facebook.com/IAmLoiDepTrai/"><img src="facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="instagram.png" alt=""></a></li>
+        </ul>
+    </section>
+
+    <script>
+        function imgSlider(anything){
+            document.querySelector('.fruits').src = anything;
+        }
+
+        function changeBgColor(color){
+            const bg = document.querySelector('.bg');
+            bg.style.background = color;
+        }
+
+
+        let el = document.querySelectorAll('.thumb li');
+        for (let i=0; i < el.length; i++) {
+            el[i].onclick = function(){
+                var c = 0;
+                while (c <el.length){
+                    el[c++].className= 'check'
+                }
+                el[i].className = 'check active'
+            }
+        }
+    </script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
